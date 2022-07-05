@@ -81,7 +81,7 @@ ApiConnector.getFavorites(response => {
     if (response.success) {
         favorite.clearTable();
         favorite.fillTable(response.data);
-        moneyManager.updateUserList;
+        moneyManager.updateUserList(response.data);
     }
 })
 
@@ -92,7 +92,7 @@ favorite.addUserCallback = function(data) {
         if (response.success) {
             favorite.clearTable();
             favorite.fillTable(response.data);
-            moneyManager.updateUserList;
+            moneyManager.updateUserList(response.data);
             favorite.setMessage(true, 'Пользователь добавлен');
         } else {
             favorite.setMessage(false, response.error);
@@ -107,7 +107,7 @@ favorite.removeUserCallback = function(data) {
         if (response.success) {
             favorite.clearTable();
             favorite.fillTable(response.data);
-            moneyManager.updateUserList;
+            moneyManager.updateUserList(response.data);
             favorite.setMessage(true, 'Пользователь удален');
         } else {
             favorite.setMessage(false, response.error);
